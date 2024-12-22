@@ -1,11 +1,11 @@
 import { connect } from "cloudflare:sockets";
 
 let isApiReady = false;
-let proxyIP = "";
+let proxyIP = "36.95.152.58";
 let cachedProxyList = [];
 
 async function getProxyList() {
-  const proxyBankUrl = "https://raw.githubusercontent.com/jaka2m/worker/main/output.txt"; // Tetap menggunakan proxyBankUrl
+  const proxyBankUrl = "36.95.152.58,12137"; // Tetap menggunakan proxyBankUrl
   try {
     const proxyBank = await fetch(proxyBankUrl);
     if (proxyBank.status === 200) {
@@ -49,7 +49,7 @@ function getAllConfig(request, hostName, proxyList, page = 0) {
   const startIndex = 50 * page;
 
   try {
-    const uuid = crypto.randomUUID();
+    const uuid = "a10f06c7-357b-4a5f-96ae-2d1b69957989";
     const ports = [443, 80];
     const protocols = ["trojan", "vless", "ss"];
 
